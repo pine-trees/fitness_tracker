@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     var lastDisplayLinkTimeStamp: CFTimeInterval!
     
     
+    @IBOutlet weak var testFractionLbl: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBAction func startStpWatchBtn(sender: AnyObject) {
         displayLink.paused = !(displayLink.paused)
@@ -45,11 +46,12 @@ class ViewController: UIViewController {
         lastDisplayLinkTimeStamp = lastDisplayLinkTimeStamp + displayLink.duration
         
         //format current time to last two meaningfull digits ( the "0.2f" is appearantly from obj-c)
-       let formatedTimeString:String = String(format: "%0.2f", lastDisplayLinkTimeStamp)
+        let fractions = (Int(lastDisplayLinkTimeStamp * 100)) % 100
+        let secconds = Int(lastDisplayLinkTimeStamp) % 60
+        let minutes = (Int(lastDisplayLinkTimeStamp) / 60) % 60
         
         //display formated current time
-        timeLabel.text = formatedTimeString
-        
+        timeLabel.text = "\(minutes):\(secconds).\(fractions)"
     }
 
 
