@@ -31,10 +31,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NKN-go-JRS">
-                                <rect key="frame" x="55" y="170" width="490" height="90"/>
+                                <rect key="frame" x="30" y="170" width="540" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icf-Ym-7on">
-                                        <rect key="frame" x="0.0" y="0.0" width="490" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="540" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="ax5-ob-QCH"/>
                                         </constraints>
@@ -42,13 +42,13 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jo-Io-2xW">
-                                        <rect key="frame" x="0.0" y="40" width="490" height="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uX2-37-Pxs">
+                                        <rect key="frame" x="0.0" y="40" width="540" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="CfO-0z-t4F"/>
+                                            <constraint firstAttribute="height" constant="50" id="9QE-RV-KXZ"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="51"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -59,12 +59,19 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Excerise list hoes here later" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHU-Ye-0IG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Excerise list hoes here later" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHU-Ye-0IG">
                                 <rect key="frame" x="195" y="340" width="210" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5PP-PX-pQL">
+                                <rect key="frame" x="170" y="426" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="stopWatchFire:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iGg-Cc-a0e"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.094117647058823528" green="0.12941176470588234" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -75,29 +82,42 @@
                             <constraint firstItem="NHU-Ye-0IG" firstAttribute="top" secondItem="NKN-go-JRS" secondAttribute="bottom" constant="80" id="GYw-J0-6i4"/>
                             <constraint firstItem="61E-C4-5SJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PU9-nq-Apr"/>
                             <constraint firstItem="NKN-go-JRS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="35" id="QOA-De-QFq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NKN-go-JRS" secondAttribute="trailing" constant="10" id="XcL-ry-kls"/>
                             <constraint firstItem="aBX-hL-wOK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Yp7-kA-y35"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NKN-go-JRS" secondAttribute="trailing" constant="22" id="aNA-IM-dMj"/>
                             <constraint firstItem="hC0-n2-uez" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="bCb-5L-645"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NKN-go-JRS" secondAttribute="trailing" constant="35" id="cFp-Ap-YC8"/>
                             <constraint firstItem="NKN-go-JRS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="22" id="d9q-pe-46i"/>
+                            <constraint firstItem="NKN-go-JRS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dPK-e5-uBt"/>
+                            <constraint firstItem="NHU-Ye-0IG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dio-gk-w54"/>
                             <constraint firstItem="NHU-Ye-0IG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eAX-e4-cQc"/>
                             <constraint firstItem="NHU-Ye-0IG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fAL-O3-pGO"/>
+                            <constraint firstItem="NKN-go-JRS" firstAttribute="top" secondItem="hC0-n2-uez" secondAttribute="bottom" constant="8" id="jEv-66-E9K"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NKN-go-JRS" secondAttribute="trailing" constant="22" id="njz-zr-5yc"/>
                             <constraint firstItem="NKN-go-JRS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ovw-0D-Hhg"/>
                             <constraint firstItem="61E-C4-5SJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="48" id="wZJ-hf-QKT"/>
+                            <constraint firstItem="NKN-go-JRS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="xA9-3U-EKd"/>
                             <constraint firstItem="hC0-n2-uez" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zYc-lg-pXB"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="10A-os-T2D"/>
                                 <exclude reference="7E3-sf-o0T"/>
+                                <exclude reference="ClT-iG-jdF"/>
+                                <exclude reference="QOA-De-QFq"/>
                                 <exclude reference="aNA-IM-dMj"/>
+                                <exclude reference="cFp-Ap-YC8"/>
                                 <exclude reference="d9q-pe-46i"/>
+                                <exclude reference="dPK-e5-uBt"/>
                                 <exclude reference="njz-zr-5yc"/>
                                 <exclude reference="ovw-0D-Hhg"/>
+                                <exclude reference="GYw-J0-6i4"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="stopwatchText" destination="uX2-37-Pxs" id="zDp-j8-yzD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
