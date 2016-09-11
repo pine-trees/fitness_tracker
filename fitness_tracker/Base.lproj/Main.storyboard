@@ -69,7 +69,7 @@
                                 <rect key="frame" x="170" y="426" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="stopWatchFire:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iGg-Cc-a0e"/>
+                                    <action selector="startStpWatchBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aUN-cg-J2N"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -116,7 +116,7 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="stopwatchText" destination="uX2-37-Pxs" id="zDp-j8-yzD"/>
+                        <outlet property="timeLabel" destination="uX2-37-Pxs" id="Roc-g1-fQ8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
