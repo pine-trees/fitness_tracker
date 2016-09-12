@@ -50,8 +50,8 @@ class ViewController: UIViewController {
         let secconds = Int(lastDisplayLinkTimeStamp) % 60
         let minutes = (Int(lastDisplayLinkTimeStamp) / 60) % 60
         
-        //display formated current time
-        timeLabel.text = "\(minutes):\(secconds).\(fractions)"
+        //display formated current time, need to add separate label for fractions or for each to prevent "jumping"
+        timeLabel.text = "\(NSString(format: "%02d", minutes)):\(NSString(format: "%02d", secconds)).\(fractions)"
     }
 
 
