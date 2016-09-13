@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import QuartzCore
+
 
 
 class ViewController: UIViewController {
@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var testFractionLbl: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBAction func startStpWatchBtn(sender: AnyObject) {
+        //Reverse the status of displayLinkPaused duh, ie start tracking screen updates
         stopWatch.displayLink.paused = !(stopWatch.displayLink.paused)
     }
 
