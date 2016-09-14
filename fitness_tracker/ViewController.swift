@@ -12,7 +12,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var stopWatch = StopWatch()
+    let stopWatch = StopWatch()
     
     
     @IBOutlet weak var testFractionLbl: UILabel!
@@ -24,13 +24,14 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        stopWatch.callback = self.updateLbl
         // Do any additional setup after loading the view, typically from a nib.
         
       
     }
 
     func updateLbl(){
-        timeLabel.text = stopWatch.timestring
+        timeLabel.text = stopWatch.timepassedAsString()
     }
 
 }

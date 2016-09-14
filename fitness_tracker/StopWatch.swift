@@ -14,8 +14,8 @@ class StopWatch: NSObject {
     // timePassed - timestamp of the last update
     var timePassed: CFTimeInterval!
     //the resulting time formatted as string
-    var timestring = ""
     
+    var callback: (() -> Void)?
     
     override init () {
         
@@ -39,31 +39,25 @@ class StopWatch: NSObject {
         
     }
     
+    // this one is tough. I understand it this way: you need an empty var within a class so you can run a function from outside of it(the one that updates the label) You have to init any emty value. But you can not do it in the initializer above, because you need to pass in an empty parameter into the callback. here in cobenience init we do the following: we init with argument callbak, which is a function, that takes in nothing and returns nothing. This also we init whatever we have in the initializer above with self.init. Now our global callback of type function that is void, is assigned a value of type void. Later we reassign that emty void with whatever function we wanna pass from outside of the class(from viewcontroller) and call this new assigned function when needed. In our case we do that upon timePassed calculation which in turn is being called when screen updates. I hope I got it right.
+    convenience init(withCallback callback: ()->Void) {
+        self.init()
+        self.callback = callback
+    }
+    
     //this function here updates timePassed variable by adding its last value to the time it takes to update the screen
     
     func displayLinkUpdate () {
         timePassed = timePassed + displayLink.duration
-        
-        //this monstrocity is the inline implementation of time foramtting. by default the value in timePassed is a double with a shitton of digits after the decimal point. we dont want that so we multiply fractions by 100 to move the deciaml point two characters to the right, then we get the modulo 100 of that to discard all digits in front of the last two; also we convert it inti Int to get rid of everything beyond the decimal point. Minutes and secconds are string since we need it in 00 format, but the logic behind converting it into int is same as before, although this time we modulo it by 60 since time is 60-based and not 100 based.
-        
-        timestring = "\(NSString(format:"%02d",(Int(timePassed / 60) % 60))):\(NSString(format: "%02d", Int(timePassed) % 60)).\(Int(timePassed * 100) % 100)"
-        if self.timestring != "" {
-            print(self.timestring)
-        }
+        callback?()
     }
     
-    //rudimentary method will probably get rid of it
-    func start () {
-        displayLink.paused = false
-    }
-    
-    //additional implemetation of time string update. might need it. right now it updates at the same time as timePassed so there is no need to addtionally cal this function from outside of the class
-    func timepassedAsString () {
+
+     //this monstrocity is the inline implementation of time foramtting. by default the value in timePassed is a double with a shitton of digits after the decimal point. we dont want that so we multiply fractions by 100 to move the deciaml point two characters to the right, then we get the modulo 100 of that to discard all digits in front of the last two; also we convert it inti Int to get rid of everything beyond the decimal point. Minutes and secconds are string since we need it in 00 format, but the logic behind converting it into int is same as before, although this time we modulo it by 60 since time is 60-based and not 100 based.
+    func timepassedAsString () -> String {
         
-        timestring = "\(NSString(format:"%02d",(Int(timePassed / 60) % 60))):\(NSString(format: "%02d", Int(timePassed) % 60)).\(Int(timePassed * 100) % 100)"
+        return "\(NSString(format:"%02d",(Int(timePassed / 60) % 60))):\(NSString(format: "%02d", Int(timePassed) % 60)).\(Int(timePassed * 100) % 100)"
     }
-    
-    
     
     
 }
