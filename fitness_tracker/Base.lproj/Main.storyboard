@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -42,7 +42,7 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uX2-37-Pxs">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uX2-37-Pxs">
                                         <rect key="frame" x="0.0" y="40" width="540" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="9QE-RV-KXZ"/>
@@ -53,44 +53,43 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ABORT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBX-hL-wOK">
-                                <rect key="frame" x="42" y="521" width="516" height="51"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Excerise list hoes here later" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHU-Ye-0IG">
                                 <rect key="frame" x="195" y="340" width="210" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5PP-PX-pQL">
-                                <rect key="frame" x="170" y="426" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="startStpWatchBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aUN-cg-J2N"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZF6-Ar-vs5">
-                                <rect key="frame" x="195" y="369" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="START WORKOUT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvQ-d5-Bzk">
+                                <rect key="frame" x="176" y="207" width="248" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5PP-PX-pQL" userLabel="Start Button">
+                                <rect key="frame" x="30" y="182" width="540" height="318"/>
+                                <color key="backgroundColor" red="0.13355395197868347" green="1" blue="0.48643052577972412" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.99912184476852417" green="0.99909186363220215" blue="0.99910891056060791" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ML8-Rp-l9Y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.094117647058823528" green="0.12941176470588234" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="5PP-PX-pQL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="01y-QF-xzN"/>
                             <constraint firstItem="NKN-go-JRS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="10A-os-T2D"/>
+                            <constraint firstItem="UvQ-d5-Bzk" firstAttribute="top" secondItem="hC0-n2-uez" secondAttribute="bottom" constant="45" id="5RF-A0-riJ"/>
                             <constraint firstItem="NKN-go-JRS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="22" id="7E3-sf-o0T"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aBX-hL-wOK" secondAttribute="bottom" constant="28" id="A4O-fp-TlX"/>
                             <constraint firstItem="NKN-go-JRS" firstAttribute="top" secondItem="hC0-n2-uez" secondAttribute="bottom" constant="8" id="ClT-iG-jdF"/>
                             <constraint firstItem="NHU-Ye-0IG" firstAttribute="top" secondItem="NKN-go-JRS" secondAttribute="bottom" constant="80" id="GYw-J0-6i4"/>
                             <constraint firstItem="61E-C4-5SJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PU9-nq-Apr"/>
                             <constraint firstItem="NKN-go-JRS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="35" id="QOA-De-QFq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NKN-go-JRS" secondAttribute="trailing" constant="10" id="XcL-ry-kls"/>
-                            <constraint firstItem="aBX-hL-wOK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Yp7-kA-y35"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NKN-go-JRS" secondAttribute="trailing" constant="22" id="aNA-IM-dMj"/>
+                            <constraint firstItem="5PP-PX-pQL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="aqR-Nu-rck"/>
                             <constraint firstItem="hC0-n2-uez" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="bCb-5L-645"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NKN-go-JRS" secondAttribute="trailing" constant="35" id="cFp-Ap-YC8"/>
                             <constraint firstItem="NKN-go-JRS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="22" id="d9q-pe-46i"/>
@@ -98,11 +97,16 @@
                             <constraint firstItem="NHU-Ye-0IG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dio-gk-w54"/>
                             <constraint firstItem="NHU-Ye-0IG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eAX-e4-cQc"/>
                             <constraint firstItem="NHU-Ye-0IG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fAL-O3-pGO"/>
+                            <constraint firstItem="5PP-PX-pQL" firstAttribute="top" secondItem="hC0-n2-uez" secondAttribute="bottom" constant="50" id="gxI-S9-syQ"/>
                             <constraint firstItem="NKN-go-JRS" firstAttribute="top" secondItem="hC0-n2-uez" secondAttribute="bottom" constant="8" id="jEv-66-E9K"/>
+                            <constraint firstItem="5PP-PX-pQL" firstAttribute="top" secondItem="hC0-n2-uez" secondAttribute="bottom" constant="20" id="k2x-tJ-2Fs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NKN-go-JRS" secondAttribute="trailing" constant="22" id="njz-zr-5yc"/>
                             <constraint firstItem="NKN-go-JRS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ovw-0D-Hhg"/>
+                            <constraint firstItem="UvQ-d5-Bzk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sRN-R2-7Eg"/>
                             <constraint firstItem="61E-C4-5SJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="48" id="wZJ-hf-QKT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5PP-PX-pQL" secondAttribute="bottom" constant="100" id="wgo-is-aPD"/>
                             <constraint firstItem="NKN-go-JRS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="xA9-3U-EKd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5PP-PX-pQL" secondAttribute="trailing" constant="10" id="xfe-pA-rsW"/>
                             <constraint firstItem="hC0-n2-uez" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zYc-lg-pXB"/>
                         </constraints>
                         <variation key="default">
@@ -117,12 +121,14 @@
                                 <exclude reference="dPK-e5-uBt"/>
                                 <exclude reference="njz-zr-5yc"/>
                                 <exclude reference="ovw-0D-Hhg"/>
+                                <exclude reference="gxI-S9-syQ"/>
                                 <exclude reference="GYw-J0-6i4"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="testFractionLbl" destination="ZF6-Ar-vs5" id="RBt-za-Zmw"/>
+                        <outlet property="startButtonOutlet" destination="5PP-PX-pQL" id="7Vy-v0-Tdg"/>
+                        <outlet property="startWorkoutLbl" destination="UvQ-d5-Bzk" id="FNX-ot-RVW"/>
                         <outlet property="timeLabel" destination="uX2-37-Pxs" id="Roc-g1-fQ8"/>
                     </connections>
                 </viewController>

@@ -14,12 +14,17 @@ class ViewController: UIViewController {
     
     let stopWatch = StopWatch()
     
-    
-    @IBOutlet weak var testFractionLbl: UILabel!
+    @IBOutlet weak var startButtonOutlet: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBAction func startStpWatchBtn(sender: AnyObject) {
+    @IBOutlet weak var startWorkoutLbl: UILabel!
+    @IBAction func startButtonAction(sender: AnyObject) {
         //Reverse the status of displayLinkPaused duh, ie start tracking screen updates
         stopWatch.displayLink.paused = !(stopWatch.displayLink.paused)
+        startWorkoutLbl.hidden = true
+        timeLabel.alpha = 1
+        
+    
+        
     }
 
     override func viewDidLoad() {
