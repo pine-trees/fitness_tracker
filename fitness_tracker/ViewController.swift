@@ -12,7 +12,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    let tempExc = ["Burpees", "Squats", "Pull-Ups", "Sit-Ups", "Jog", "Jumping Jacks"]
+    var tempExc = ["Burpees", "Squats", "Pull-Ups", "Sit-Ups", "Jog", "Jumping Jacks","Push-ups"]
     let cellIdentifier = "textCell"
     let stopWatch = StopWatch()
     
@@ -26,6 +26,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         stopWatch.displayLink.paused = !(stopWatch.displayLink.paused)
         startWorkoutLbl.hidden = true
         timeLabel.alpha = 1
+        tempExc.removeAtIndex(0)
+        tableView.reloadData()
     }
 
     override func viewDidLoad() {
@@ -48,16 +50,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
-        
         let row = indexPath.row
         cell.textLabel?.text = tempExc[row]
-        
+        cell.contentView.alpha = 1
         return cell
     }
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    
+    //Here the cell are assigned different alpha values based on the for loop. the loop iterates through table data source(in our case array) and calculates the alpha based on the overal number of cells. Just like calculating percentage, but without multiplication by 100
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         let row = indexPath.row
-        print(tempExc[row])
+        for x in 0...tempExc.count {
+            if row == 0 {
+                cell.contentView.alpha = 1
+            } else {
+                cell.contentView.alpha = CGFloat((Double(tempExc.count-1) - Double(row)) / Double(tempExc.count-1))
+                print(cell.contentView.alpha)
+            }
+        }
+            
     }
+    
 }
+
 
