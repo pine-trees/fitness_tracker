@@ -12,9 +12,11 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var tempExc = ["Burpees", "Squats", "Pull-Ups", "Sit-Ups", "Jog", "Jumping Jacks","Push-ups"]
+    var tempExc = ["Burpees", "Squats", "Pull-Ups", "Sit-Ups", "Jog", "Jumping Jacks"]
     let cellIdentifier = "textCell"
     let stopWatch = StopWatch()
+    //gradient object is created here
+    var gradientMaskLayer:CAGradientLayer = CAGradientLayer()
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var startButtonOutlet: UIButton!
@@ -26,8 +28,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         stopWatch.displayLink.paused = !(stopWatch.displayLink.paused)
         startWorkoutLbl.hidden = true
         timeLabel.alpha = 1
+        //deketing the first row of table view, for it to not brake the data source for that row has to be romoved as well right now app crashes when array reaches 0 elements
+        let delIndexPath = [NSIndexPath(forRow: 0, inSection: 0)]
         tempExc.removeAtIndex(0)
-        tableView.reloadData()
+        tableView.deleteRowsAtIndexPaths(delIndexPath, withRowAnimation: UITableViewRowAnimation.Fade)
     }
 
     override func viewDidLoad() {
@@ -36,8 +40,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Do any additional setup after loading the view, typically from a nib.
         tableView.dataSource = self
         tableView.delegate = self
+        //gradient object parameters
+        gradientMaskLayer.frame = tableView.bounds
+        gradientMaskLayer.colors = [UIColor.blackColor().CGColor, UIColor.clearColor().CGColor]
+        gradientMaskLayer.locations = [0.0, 1.0]
+        //who could have though these things have masks just like in photoshop!
+        tableView.layer.mask = gradientMaskLayer
     }
-
+//label update func which is a called from within the stopwatch class
     func updateLbl(){
         timeLabel.text = stopWatch.timepassedAsString()
     }
@@ -52,23 +62,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
         let row = indexPath.row
         cell.textLabel?.text = tempExc[row]
-        cell.contentView.alpha = 1
         return cell
     }
     
-    //Here the cell are assigned different alpha values based on the for loop. the loop iterates through table data source(in our case array) and calculates the alpha based on the overal number of cells. Just like calculating percentage, but without multiplication by 100
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        let row = indexPath.row
-        for x in 0...tempExc.count {
-            if row == 0 {
-                cell.contentView.alpha = 1
-            } else {
-                cell.contentView.alpha = CGFloat((Double(tempExc.count-1) - Double(row)) / Double(tempExc.count-1))
-                print(cell.contentView.alpha)
-            }
-        }
-            
-    }
+    
     
 }
 
