@@ -28,10 +28,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         stopWatch.displayLink.paused = !(stopWatch.displayLink.paused)
         startWorkoutLbl.hidden = true
         timeLabel.alpha = 1
-        //deketing the first row of table view, for it to not brake the data source for that row has to be romoved as well right now app crashes when array reaches 0 elements
-        let delIndexPath = [NSIndexPath(forRow: 0, inSection: 0)]
-        tempExc.removeAtIndex(0)
-        tableView.deleteRowsAtIndexPaths(delIndexPath, withRowAnimation: UITableViewRowAnimation.Fade)
+        deleteRow()
     }
 
     override func viewDidLoad() {
@@ -51,7 +48,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func updateLbl(){
         timeLabel.text = stopWatch.timepassedAsString()
     }
-
+    // this fucntion deletes rows from both table and data source, but keeps the app from crashing by checking if there are any left to delete
+    func deleteRow() {
+        let indexPath = [NSIndexPath(forRow: 0, inSection: 0)]
+        if tempExc.count > 1{
+            
+            tempExc.removeAtIndex(0)
+            tableView.deleteRowsAtIndexPaths(indexPath, withRowAnimation: UITableViewRowAnimation.Fade)
+    
+        } //need to add an else statement that gives us a completion screen with statistics.
+            }
+    
+//table view usual BS
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
