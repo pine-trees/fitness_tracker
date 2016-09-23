@@ -10,13 +10,14 @@ import UIKit
 
 
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDelegate {
     
-    var tempExc = ["Burpees", "Squats", "Pull-Ups", "Sit-Ups", "Jog", "Jumping Jacks"]
-    let cellIdentifier = "textCell"
+    var tableViewData = CurrentWorkoutTableViewDataSource()
     let stopWatch = StopWatch()
+    let defaultWorkout = Workout(name: "Default Workout")
     //gradient object is created here
     var gradientMaskLayer:CAGradientLayer = CAGradientLayer()
+    
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var startButtonOutlet: UIButton!
@@ -28,14 +29,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         stopWatch.displayLink.paused = !(stopWatch.displayLink.paused)
         startWorkoutLbl.hidden = true
         timeLabel.alpha = 1
-        deleteRow()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         stopWatch.callback = self.updateLbl
         // Do any additional setup after loading the view, typically from a nib.
-        tableView.dataSource = self
+        tableView.dataSource = tableViewData
         tableView.delegate = self
         //gradient object parameters
         gradientMaskLayer.frame = tableView.bounds
@@ -43,36 +43,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         gradientMaskLayer.locations = [0.0, 1.0]
         //who could have though these things have masks just like in photoshop!
         tableView.layer.mask = gradientMaskLayer
+        
     }
 //label update func which is a called from within the stopwatch class
     func updateLbl(){
         timeLabel.text = stopWatch.timepassedAsString()
     }
-    // this fucntion deletes rows from both table and data source, but keeps the app from crashing by checking if there are any left to delete
-    func deleteRow() {
-        let indexPath = [NSIndexPath(forRow: 0, inSection: 0)]
-        if tempExc.count > 1{
-            
-            tempExc.removeAtIndex(0)
-            tableView.deleteRowsAtIndexPaths(indexPath, withRowAnimation: UITableViewRowAnimation.Fade)
     
-        } //need to add an else statement that gives us a completion screen with statistics.
-            }
-    
-//table view usual BS
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tempExc.count
-    }
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
-        let row = indexPath.row
-        cell.textLabel?.text = tempExc[row]
-        return cell
-    }
-    
+
     
     
 }

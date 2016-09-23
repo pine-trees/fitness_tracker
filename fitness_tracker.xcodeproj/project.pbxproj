@@ -7,17 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		443E10F21D95D91B00E7014A /* CurrentWorkoutTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443E10F11D95D91B00E7014A /* CurrentWorkoutTableViewDataSource.swift */; };
 		4475A3561D820C7700964161 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4475A3551D820C7700964161 /* AppDelegate.swift */; };
 		4475A3581D820C7700964161 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4475A3571D820C7700964161 /* ViewController.swift */; };
 		4475A35B1D820C7700964161 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4475A3591D820C7700964161 /* Main.storyboard */; };
 		4475A35D1D820C7700964161 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4475A35C1D820C7700964161 /* Assets.xcassets */; };
 		4475A3601D820C7700964161 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4475A35E1D820C7700964161 /* LaunchScreen.storyboard */; };
 		44BC44CB1D9484EA00961EC1 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BC44CA1D9484EA00961EC1 /* Workout.swift */; };
-		44BC44CD1D94923400961EC1 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BC44CC1D94923400961EC1 /* Exercise.swift */; };
 		44DAAE301D87491D00B58DC6 /* StopWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DAAE2F1D87491D00B58DC6 /* StopWatch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		443E10F11D95D91B00E7014A /* CurrentWorkoutTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWorkoutTableViewDataSource.swift; sourceTree = "<group>"; };
 		4475A3521D820C7700964161 /* fitness_tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fitness_tracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4475A3551D820C7700964161 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4475A3571D820C7700964161 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,7 +27,6 @@
 		4475A35F1D820C7700964161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4475A3611D820C7700964161 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44BC44CA1D9484EA00961EC1 /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Workout.swift; path = ../Workout.swift; sourceTree = "<group>"; };
-		44BC44CC1D94923400961EC1 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		44DAAE2F1D87491D00B58DC6 /* StopWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopWatch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,10 +61,10 @@
 			isa = PBXGroup;
 			children = (
 				44BC44CA1D9484EA00961EC1 /* Workout.swift */,
-				44BC44CC1D94923400961EC1 /* Exercise.swift */,
 				4475A3551D820C7700964161 /* AppDelegate.swift */,
 				44DAAE2F1D87491D00B58DC6 /* StopWatch.swift */,
 				4475A3571D820C7700964161 /* ViewController.swift */,
+				443E10F11D95D91B00E7014A /* CurrentWorkoutTableViewDataSource.swift */,
 				4475A3591D820C7700964161 /* Main.storyboard */,
 				4475A35C1D820C7700964161 /* Assets.xcassets */,
 				4475A35E1D820C7700964161 /* LaunchScreen.storyboard */,
@@ -145,9 +145,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44BC44CD1D94923400961EC1 /* Exercise.swift in Sources */,
 				44DAAE301D87491D00B58DC6 /* StopWatch.swift in Sources */,
 				4475A3581D820C7700964161 /* ViewController.swift in Sources */,
+				443E10F21D95D91B00E7014A /* CurrentWorkoutTableViewDataSource.swift in Sources */,
 				4475A3561D820C7700964161 /* AppDelegate.swift in Sources */,
 				44BC44CB1D9484EA00961EC1 /* Workout.swift in Sources */,
 			);
