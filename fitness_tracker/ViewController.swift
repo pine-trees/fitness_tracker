@@ -50,9 +50,6 @@ class ViewController: UIViewController, UITableViewDelegate {
         timeLabel.text = stopWatch.timepassedAsString()
     }
     
-
-    
-    
 }
 
 
