@@ -29,6 +29,7 @@ class ViewController: UIViewController, UITableViewDelegate {
         stopWatch.displayLink.paused = !(stopWatch.displayLink.paused)
         startWorkoutLbl.hidden = true
         timeLabel.alpha = 1
+        deleteRow()
     }
 
     override func viewDidLoad() {
@@ -50,6 +51,15 @@ class ViewController: UIViewController, UITableViewDelegate {
         timeLabel.text = stopWatch.timepassedAsString()
     }
     
+    func deleteRow() {
+        let indexPath = [NSIndexPath(forRow: 0, inSection: 0)]
+        if tableViewData.currentWorkout.exercises.count > 1{
+            
+            tableViewData.currentWorkout.exercises.removeAtIndex(0)
+            tableView.deleteRowsAtIndexPaths(indexPath, withRowAnimation: UITableViewRowAnimation.Fade)
+            
+        } //need to add an else statement that gives us a completion screen with statistics.
+    }
 }
 
 
