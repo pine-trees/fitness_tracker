@@ -15,17 +15,17 @@ class Workout {
         var completionCondition: Int
         var type: String
         var completionTime: Double?
-        var completionDate: NSDate?
+        var completionDate: Date?
     }
     
     var name: String
     var exercises = [Exercise]()
     var completionStatus = false
     var completionTime: Double?
-    var completionDate = NSDate()
+    var completionDate = Date()
     var bestResult: Bool?
     
-    func appendExercise (name: String, completionCondition: Int, type: String) {
+    func appendExercise (_ name: String, completionCondition: Int, type: String) {
         self.exercises.append(Workout.Exercise(name: name, completionCondition: completionCondition, type: type, completionTime: nil, completionDate: nil))
     }
     

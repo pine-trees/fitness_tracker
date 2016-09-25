@@ -10,7 +10,7 @@ import UIKit
 
 
 
-class ViewController: UIViewController, UITableViewDelegate {
+class StopWatchVC: UIViewController, UITableViewDelegate {
     
     var tableViewData = CurrentWorkoutTableViewDataSource()
     let stopWatch = StopWatch()

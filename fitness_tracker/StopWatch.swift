@@ -27,11 +27,11 @@ class StopWatch: NSObject {
         
         //paused by default so we can start/stop it manually
         
-        displayLink.paused = true
+        displayLink.isPaused = true
         
         //display link must be added to runLoop with these parameters(as far as i understand it connects it to the ticks of the processor or whatever. in any case this is what allows it to track the screen updates as the ruuning tie goes on
         
-        displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
+        displayLink.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
         
         //could have initialized it to 0.0 but it looks cooler this way. timestamp is the value of the last display uodate. since its paused by default its 0.0 now
         
@@ -40,7 +40,7 @@ class StopWatch: NSObject {
     }
     
     // this one is tough. I understand it this way: you need an empty var within a class so you can run a function from outside of it(the one that updates the label) You have to init any emty value. But you can not do it in the initializer above, because you need to pass in an empty parameter into the callback. here in cobenience init we do the following: we init with argument callbak, which is a function, that takes in nothing and returns nothing. This also we init whatever we have in the initializer above with self.init. Now our global callback of type function that is void, is assigned a value of type void. Later we reassign that emty void with whatever function we wanna pass from outside of the class(from viewcontroller) and call this new assigned function when needed. In our case we do that upon timePassed calculation which in turn is being called when screen updates. I hope I got it right.
-    convenience init(withCallback callback: ()->Void) {
+    convenience init(withCallback callback: @escaping ()->Void) {
         self.init()
         self.callback = callback
     }

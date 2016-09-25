@@ -106,6 +106,7 @@
 					4475A3511D820C7700964161 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = V4ERE33P7W;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -269,6 +270,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.EugeneShmeerov.fitness-tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -283,6 +285,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.EugeneShmeerov.fitness-tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
