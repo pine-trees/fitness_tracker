@@ -14,7 +14,6 @@ class ViewController: UIViewController, UITableViewDelegate {
     
     var tableViewData = CurrentWorkoutTableViewDataSource()
     let stopWatch = StopWatch()
-    let defaultWorkout = Workout(name: "Default Workout")
     //gradient object is created here
     var gradientMaskLayer:CAGradientLayer = CAGradientLayer()
     

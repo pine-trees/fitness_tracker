@@ -15,6 +15,8 @@
 		4475A3601D820C7700964161 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4475A35E1D820C7700964161 /* LaunchScreen.storyboard */; };
 		44BC44CB1D9484EA00961EC1 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BC44CA1D9484EA00961EC1 /* Workout.swift */; };
 		44DAAE301D87491D00B58DC6 /* StopWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DAAE2F1D87491D00B58DC6 /* StopWatch.swift */; };
+		44E0ADE31D9985E800235058 /* WkOutEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E0ADE21D9985E800235058 /* WkOutEditVC.swift */; };
+		44E0ADE51D9993CD00235058 /* excCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E0ADE41D9993CD00235058 /* excCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,8 +28,10 @@
 		4475A35C1D820C7700964161 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4475A35F1D820C7700964161 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4475A3611D820C7700964161 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		44BC44CA1D9484EA00961EC1 /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Workout.swift; path = ../Workout.swift; sourceTree = "<group>"; };
+		44BC44CA1D9484EA00961EC1 /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		44DAAE2F1D87491D00B58DC6 /* StopWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopWatch.swift; sourceTree = "<group>"; };
+		44E0ADE21D9985E800235058 /* WkOutEditVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WkOutEditVC.swift; sourceTree = "<group>"; };
+		44E0ADE41D9993CD00235058 /* excCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = excCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +69,9 @@
 				44DAAE2F1D87491D00B58DC6 /* StopWatch.swift */,
 				4475A3571D820C7700964161 /* ViewController.swift */,
 				443E10F11D95D91B00E7014A /* CurrentWorkoutTableViewDataSource.swift */,
+				44E0ADE41D9993CD00235058 /* excCell.swift */,
 				4475A3591D820C7700964161 /* Main.storyboard */,
+				44E0ADE21D9985E800235058 /* WkOutEditVC.swift */,
 				4475A35C1D820C7700964161 /* Assets.xcassets */,
 				4475A35E1D820C7700964161 /* LaunchScreen.storyboard */,
 				4475A3611D820C7700964161 /* Info.plist */,
@@ -100,7 +106,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Eugene Shmeerov";
 				TargetAttributes = {
 					4475A3511D820C7700964161 = {
@@ -147,9 +153,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				44DAAE301D87491D00B58DC6 /* StopWatch.swift in Sources */,
+				44E0ADE31D9985E800235058 /* WkOutEditVC.swift in Sources */,
 				4475A3581D820C7700964161 /* ViewController.swift in Sources */,
 				443E10F21D95D91B00E7014A /* CurrentWorkoutTableViewDataSource.swift in Sources */,
 				4475A3561D820C7700964161 /* AppDelegate.swift in Sources */,
+				44E0ADE51D9993CD00235058 /* excCell.swift in Sources */,
 				44BC44CB1D9484EA00961EC1 /* Workout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,8 +198,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -213,7 +223,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -235,8 +245,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -252,9 +264,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

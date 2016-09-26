@@ -12,16 +12,7 @@ class CurrentWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
     
     var currentWorkout = Workout(name: "Default Workout")
     
-    //workaround to get a list of exercises in current workout as an array. gotta be a more elegant solution. need to check array methods
-//    var currentSet: [String] {
-//        var array = [String]()
-//        for x in 0...currentWorkout.exercises.count - 1 {
-//            array.append(currentWorkout.exercises[x].name)
-//        }
-//        return array
-//    }
-    
-    let cellIdentifier = "textCell"
+    let cellIdentifier = "excCell"
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -31,10 +22,16 @@ class CurrentWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
         return currentWorkout.exercises.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        let row = (indexPath as NSIndexPath).row
-        cell.textLabel?.text = currentWorkout.exercises[row].name
-        return cell
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? excCell {
+            let row = (indexPath as NSIndexPath).row
+            cell.cellConfig(excName: currentWorkout.exercises[row].name, cond: currentWorkout.exercises[row].completionCondition, discr: "reps")
+            return cell
+        } else {
+            return excCell()
+        }
+        
+
     }
     
     

@@ -33,10 +33,10 @@ class Workout {
         self.name = name
         appendExercise("Burpee", completionCondition: 25, type: "cardio")
         appendExercise("Squat", completionCondition: 40, type: "streingth")
-        appendExercise("Pull-ups", completionCondition: 10, type: "streingth")
-        appendExercise("Sit-ups", completionCondition: 60, type: "streingth")
+        appendExercise("Pull-up", completionCondition: 10, type: "streingth")
+        appendExercise("Sit-up", completionCondition: 60, type: "streingth")
         appendExercise("Jog", completionCondition: 6, type: "Cardio")
-        appendExercise("Jumping jacks", completionCondition: 100, type: "cardio")
+        appendExercise("Jumping jack", completionCondition: 100, type: "cardio")
     }
     
 }
