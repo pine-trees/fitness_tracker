@@ -14,6 +14,7 @@ class CurrentWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
     
     let cellIdentifier = "excCell"
     
+    let imgArray = [UIImage(named: "Dumbbell_Icon.png"), UIImage(named: "Heart_Icon.png")]
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -25,6 +26,12 @@ class CurrentWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? excCell {
             let row = (indexPath as NSIndexPath).row
+            
+            if currentWorkout.exercises[row].isCardio {
+                cell.icon.image = imgArray[1]
+            } else {
+                cell.icon.image = imgArray[0]
+            }
             cell.cellConfig(excName: currentWorkout.exercises[row].name, cond: currentWorkout.exercises[row].completionCondition, discr: "reps")
             return cell
         } else {

@@ -28,7 +28,6 @@ class excCell: UITableViewCell {
     
     func cellConfig (excName: String, cond: Int, discr: String) {
         
-//        icon.image = image
         excNameLbl.text = excName + "s"
         condLbl.text = "x\(cond)"
         discrLbl.text = discr
