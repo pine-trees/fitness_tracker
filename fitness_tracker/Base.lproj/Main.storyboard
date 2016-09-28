@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="50g-cr-WrD">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -126,10 +125,10 @@
             </objects>
             <point key="canvasLocation" x="508" y="611.24437781109452"/>
         </scene>
-        <!--Wk Out EditVC-->
+        <!--WorkoutEditVC-->
         <scene sceneID="RAM-PX-fl6">
             <objects>
-                <viewController id="50g-cr-WrD" customClass="WkOutEditVC" customModule="fitness_tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="50g-cr-WrD" userLabel="WorkoutEditVC" customClass="WorkoutEditVC" customModule="fitness_tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ufM-Vu-1nh"/>
                         <viewControllerLayoutGuide type="bottom" id="G6y-jG-kHV"/>
@@ -189,6 +188,13 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BtH-O1-QBH">
+                                                    <frame key="frameInset" minX="148" minY="7" width="97" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="GIw-02-OyW" firstAttribute="centerY" secondItem="Ino-OV-l4z" secondAttribute="centerY" id="E7j-UM-zF4"/>
@@ -207,6 +213,7 @@
                                             <outlet property="discrLbl" destination="Sc2-2Y-ugs" id="GKL-jI-i4T"/>
                                             <outlet property="excNameLbl" destination="1wW-LB-AAN" id="tj8-4T-tlD"/>
                                             <outlet property="icon" destination="erU-Hs-l6Q" id="vmN-nU-4ko"/>
+                                            <outlet property="newNameField" destination="BtH-O1-QBH" id="lMF-lU-E4x"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -233,8 +240,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="45t-kj-QcO" id="eUy-aM-AaQ"/>
-                        <outlet property="workoutName" destination="SoG-xD-60F" id="Fr2-Em-eOl"/>
+                        <outlet property="tableView" destination="45t-kj-QcO" id="fIr-bp-qgj"/>
+                        <outlet property="workoutName" destination="SoG-xD-60F" id="rUS-Ld-IFR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gU4-Ii-HAg" userLabel="First Responder" sceneMemberID="firstResponder"/>

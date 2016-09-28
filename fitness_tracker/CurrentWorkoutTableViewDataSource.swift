@@ -8,13 +8,14 @@
 
 import UIKit
 
-class CurrentWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
+class CurrentWorkoutTableViewDataSource: NSObject, UITableViewDataSource, UITextFieldDelegate {
     
     var currentWorkout = Workout(name: "Default Workout")
     
     let cellIdentifier = "excCell"
     
     let imgArray = [UIImage(named: "Dumbbell_Icon.png"), UIImage(named: "Heart_Icon.png")]
+    var callback: (() -> Void)?
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -33,13 +34,16 @@ class CurrentWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
                 cell.icon.image = imgArray[0]
             }
             cell.cellConfig(excName: currentWorkout.exercises[row].name, cond: currentWorkout.exercises[row].completionCondition, discr: "reps")
+            cell.newNameField.tag = row
+            cell.newNameField.delegate = self
             return cell
         } else {
             return excCell()
         }
-        
-
     }
-    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        currentWorkout.exercises[textField.tag].name = textField.text!
+       callback?()
+    }
     
 }

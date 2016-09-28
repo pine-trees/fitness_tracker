@@ -10,6 +10,7 @@ import UIKit
 
 class excCell: UITableViewCell {
 
+    @IBOutlet weak var newNameField: UITextField!
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var excNameLbl: UILabel!
     @IBOutlet weak var condLbl: UILabel!
