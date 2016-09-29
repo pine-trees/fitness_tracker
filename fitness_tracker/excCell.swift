@@ -28,8 +28,8 @@ class excCell: UITableViewCell {
     }
     
     func cellConfig (excName: String, cond: Int, discr: String) {
-        
-        excNameLbl.text = excName + "s"
+        newNameField.text = excName
+//        excNameLbl.text = excName + "s"
         condLbl.text = "x\(cond)"
         discrLbl.text = discr
     }
