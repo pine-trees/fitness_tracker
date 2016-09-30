@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="50g-cr-WrD">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -204,29 +204,29 @@
                                                         <constraint firstAttribute="height" constant="40" id="r79-Z6-OZE"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x25" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIw-02-OyW">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rep.s" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sc2-2Y-ugs">
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Exercise" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BtH-O1-QBH">
-                                                    <frame key="frameInset" minX="76" minY="7" width="97" height="30"/>
+                                                    <frame key="frameInset" minX="66" minY="7" width="204" height="30"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dnv-NV-wQV">
+                                                    <frame key="frameInset" minX="251" minY="7" width="61" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="GIw-02-OyW" firstAttribute="centerY" secondItem="Ino-OV-l4z" secondAttribute="centerY" id="E7j-UM-zF4"/>
                                                 <constraint firstItem="BtH-O1-QBH" firstAttribute="centerY" secondItem="Ino-OV-l4z" secondAttribute="centerY" id="TlS-74-Xrb"/>
                                                 <constraint firstItem="Sc2-2Y-ugs" firstAttribute="centerY" secondItem="Ino-OV-l4z" secondAttribute="centerY" id="Xks-hL-qk1"/>
-                                                <constraint firstItem="BtH-O1-QBH" firstAttribute="leading" secondItem="erU-Hs-l6Q" secondAttribute="trailing" constant="20" id="cb8-J0-j1m"/>
-                                                <constraint firstItem="Sc2-2Y-ugs" firstAttribute="leading" secondItem="GIw-02-OyW" secondAttribute="trailing" constant="8" id="dIy-aj-Sh5"/>
+                                                <constraint firstItem="BtH-O1-QBH" firstAttribute="leading" secondItem="erU-Hs-l6Q" secondAttribute="trailing" constant="10" id="cb8-J0-j1m"/>
                                                 <constraint firstItem="erU-Hs-l6Q" firstAttribute="leading" secondItem="Ino-OV-l4z" secondAttribute="leadingMargin" constant="8" id="fQ9-91-AWA"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Sc2-2Y-ugs" secondAttribute="trailing" constant="8" id="iW5-5H-tjr"/>
                                                 <constraint firstItem="erU-Hs-l6Q" firstAttribute="centerY" secondItem="Ino-OV-l4z" secondAttribute="centerY" id="jz4-YH-0Gn"/>
@@ -234,7 +234,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <outlet property="condLbl" destination="GIw-02-OyW" id="JwT-ld-zph"/>
+                                            <outlet property="condField" destination="Dnv-NV-wQV" id="0kd-x8-4Wv"/>
                                             <outlet property="discrLbl" destination="Sc2-2Y-ugs" id="GKL-jI-i4T"/>
                                             <outlet property="icon" destination="erU-Hs-l6Q" id="vmN-nU-4ko"/>
                                             <outlet property="newNameField" destination="BtH-O1-QBH" id="lMF-lU-E4x"/>

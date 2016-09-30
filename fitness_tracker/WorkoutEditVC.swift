@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WorkoutEditVC: UIViewController, UITableViewDelegate, UITextFieldDelegate {
+class WorkoutEditVC: UIViewController, UITableViewDelegate {
     
     var tableViewData = CurrentWorkoutTableViewDataSource()
     @IBOutlet weak var workoutName: UILabel!

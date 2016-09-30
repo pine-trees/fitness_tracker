@@ -12,7 +12,8 @@ class excCell: UITableViewCell {
 
     @IBOutlet weak var newNameField: UITextField!
     @IBOutlet weak var icon: UIImageView!
-    @IBOutlet weak var excNameLbl: UILabel!
+  
+    @IBOutlet weak var condField: UITextField!
     @IBOutlet weak var condLbl: UILabel!
     @IBOutlet weak var discrLbl: UILabel!
     
@@ -29,8 +30,7 @@ class excCell: UITableViewCell {
     
     func cellConfig (excName: String, cond: Int, discr: String) {
         newNameField.text = excName
-//        excNameLbl.text = excName + "s"
-        condLbl.text = "x\(cond)"
+        condField.text = "\(cond)"
         discrLbl.text = discr
     }
 }

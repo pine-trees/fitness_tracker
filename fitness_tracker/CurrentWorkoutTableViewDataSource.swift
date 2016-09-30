@@ -34,6 +34,8 @@ class CurrentWorkoutTableViewDataSource: NSObject, UITableViewDataSource, UIText
                 cell.icon.image = imgArray[0]
             }
             cell.cellConfig(excName: currentWorkout.exercises[row].name, cond: currentWorkout.exercises[row].completionCondition, discr: "reps")
+            cell.condField.tag = row + 100000
+            cell.condField.delegate = self
             cell.newNameField.tag = row
             cell.newNameField.delegate = self
             return cell
@@ -42,7 +44,12 @@ class CurrentWorkoutTableViewDataSource: NSObject, UITableViewDataSource, UIText
         }
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
-        currentWorkout.exercises[textField.tag].name = textField.text!
+        if textField.tag < 100000 {
+            currentWorkout.exercises[textField.tag].name = textField.text!
+        } else {
+            currentWorkout.exercises[textField.tag - 100000].completionCondition = Int(textField.text!)!
+        }
+        
        callback?()
     }
     
