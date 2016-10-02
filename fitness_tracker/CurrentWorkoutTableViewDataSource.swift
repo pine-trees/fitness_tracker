@@ -43,11 +43,20 @@ class CurrentWorkoutTableViewDataSource: NSObject, UITableViewDataSource, UIText
             return excCell()
         }
     }
+    
+    
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.tag < 100000 {
-            currentWorkout.exercises[textField.tag].name = textField.text!
+            if textField.text != ""{
+                currentWorkout.exercises[textField.tag].name = textField.text!
+            }
         } else {
-            currentWorkout.exercises[textField.tag - 100000].completionCondition = Int(textField.text!)!
+            if textField.text == "" {
+                currentWorkout.exercises[textField.tag - 100000].completionCondition = 0
+            } else {
+                currentWorkout.exercises[textField.tag - 100000].completionCondition = Int(textField.text!)!
+            }
         }
         
        callback?()

@@ -27,7 +27,7 @@ class ViewController: UIViewController, UITableViewDelegate {
         //Reverse the status of displayLinkPaused duh, ie start tracking screen updates
         stopWatch.displayLink.isPaused = !(stopWatch.displayLink.isPaused)
         startWorkoutLbl.isHidden = true
-        timeLabel.alpha = 1
+        timeLabel.alpha = 1.0
         deleteRow()
     }
 

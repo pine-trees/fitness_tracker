@@ -21,7 +21,7 @@ class WorkoutEditVC: UIViewController, UITableViewDelegate {
         tableView.delegate = self
         workoutName.text = tableViewData.currentWorkout.name
         tableViewData.callback = self.forceUpdateTable
-        
+        keyboardNotifications()
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -32,7 +32,28 @@ class WorkoutEditVC: UIViewController, UITableViewDelegate {
     func forceUpdateTable () {
         tableView.reloadData()
     }
-
+    
+    //Keyboard management
+    func keyboardNotifications () {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    func keyboardWillShow(sender: Notification) {
+        let info = sender.userInfo
+        let value = info?[UIKeyboardFrameEndUserInfoKey] as! NSValue
+        let keyboardSize: CGSize = value.cgRectValue.size
+        let contentInsets: UIEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height, 0.0)
+        tableView.contentInset = contentInsets
+        tableView.scrollIndicatorInsets = contentInsets
+    }
+    
+    func keyboardWillHide(sender: Notification) {
+        let contentInsets: UIEdgeInsets = UIEdgeInsets.zero
+        tableView.contentInset = contentInsets
+        tableView.scrollIndicatorInsets = contentInsets
+    }
     /*
     // MARK: - Navigation
 

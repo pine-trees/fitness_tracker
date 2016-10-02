@@ -14,12 +14,13 @@ class excCell: UITableViewCell {
     @IBOutlet weak var icon: UIImageView!
   
     @IBOutlet weak var condField: UITextField!
-    @IBOutlet weak var condLbl: UILabel!
+
     @IBOutlet weak var discrLbl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        condField.keyboardType = UIKeyboardType.numberPad
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
