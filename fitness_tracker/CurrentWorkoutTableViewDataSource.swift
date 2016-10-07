@@ -38,13 +38,24 @@ class CurrentWorkoutTableViewDataSource: NSObject, UITableViewDataSource, UIText
             cell.condField.delegate = self
             cell.newNameField.tag = row
             cell.newNameField.delegate = self
+            
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imgTapped))
+            cell.icon.addGestureRecognizer(tapGesture)
+            cell.icon.isUserInteractionEnabled = true
+            cell.icon.tag = row
+            
             return cell
         } else {
             return excCell()
         }
     }
     
-    
+    func imgTapped (sender: UITapGestureRecognizer) {
+        let index = Int((sender.view?.tag)!)
+        currentWorkout.exercises[index].isCardio = !currentWorkout.exercises[index].isCardio
+        callback?()
+        print("worked, on row \(index)")
+    }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField.tag < 100000 {
