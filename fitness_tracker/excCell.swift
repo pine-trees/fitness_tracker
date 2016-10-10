@@ -20,6 +20,7 @@ class excCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        //You can specify keyboard type for a given textfield.Like so.
         condField.keyboardType = UIKeyboardType.numberPad
     }
 
@@ -29,6 +30,7 @@ class excCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    //cellconfig assigns all the inputs to cell elements. 
     func cellConfig (excName: String, cond: Int, discr: String) {
         newNameField.text = excName
         condField.text = "\(cond)"
