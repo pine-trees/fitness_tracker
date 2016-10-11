@@ -242,16 +242,25 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XSv-dC-9NQ" userLabel="Plus_sign">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="8fT-Df-z75"/>
+                                    <constraint firstAttribute="height" constant="35" id="qrp-ff-e98"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="plus_sign"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.6470588235294118" green="0.82352941176470584" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="XSv-dC-9NQ" firstAttribute="centerX" secondItem="Wb0-oj-Z8m" secondAttribute="centerX" id="340-0F-OlO"/>
                             <constraint firstItem="SoG-xD-60F" firstAttribute="leading" secondItem="Wb0-oj-Z8m" secondAttribute="leading" constant="16" id="4kR-T4-793"/>
                             <constraint firstItem="lQH-9c-cGX" firstAttribute="leading" secondItem="Wb0-oj-Z8m" secondAttribute="leading" id="5AN-Ww-hca"/>
                             <constraint firstItem="2v1-cd-mOn" firstAttribute="leading" secondItem="Wb0-oj-Z8m" secondAttribute="leading" id="Ehq-b5-9UH"/>
                             <constraint firstItem="2v1-cd-mOn" firstAttribute="top" secondItem="Wb0-oj-Z8m" secondAttribute="top" constant="-80" id="J0p-hs-n4L"/>
                             <constraint firstItem="8Ac-Z0-iFl" firstAttribute="leading" secondItem="Wb0-oj-Z8m" secondAttribute="leadingMargin" constant="13" id="MhT-Yf-IXb"/>
                             <constraint firstAttribute="trailing" secondItem="45t-kj-QcO" secondAttribute="trailing" id="NUG-NA-ztn"/>
-                            <constraint firstItem="G6y-jG-kHV" firstAttribute="top" secondItem="45t-kj-QcO" secondAttribute="bottom" id="SPM-bj-DdR"/>
+                            <constraint firstItem="XSv-dC-9NQ" firstAttribute="top" secondItem="45t-kj-QcO" secondAttribute="bottom" id="TV3-gO-jWj"/>
+                            <constraint firstItem="G6y-jG-kHV" firstAttribute="top" secondItem="XSv-dC-9NQ" secondAttribute="bottom" id="bKH-oo-eUV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8Ac-Z0-iFl" secondAttribute="trailing" constant="13" id="i3O-uO-79t"/>
                             <constraint firstAttribute="trailing" secondItem="2v1-cd-mOn" secondAttribute="trailing" id="igl-If-mB6"/>
                             <constraint firstItem="8Ac-Z0-iFl" firstAttribute="top" secondItem="ufM-Vu-1nh" secondAttribute="bottom" constant="62" id="nPw-9K-tZH"/>
@@ -277,5 +286,6 @@
         <image name="Dumbbell_Icon" width="500" height="500"/>
         <image name="Top_tint1" width="1080" height="162"/>
         <image name="Top_tint2" width="1080" height="162"/>
+        <image name="plus_sign" width="500" height="500"/>
     </resources>
 </document>
