@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="50g-cr-WrD">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="50g-cr-WrD">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -244,10 +244,13 @@
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XSv-dC-9NQ" userLabel="Plus_sign">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="35" id="8fT-Df-z75"/>
-                                    <constraint firstAttribute="height" constant="35" id="qrp-ff-e98"/>
+                                    <constraint firstAttribute="width" constant="30" id="8fT-Df-z75"/>
+                                    <constraint firstAttribute="height" constant="30" id="qrp-ff-e98"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="plus_sign"/>
+                                <connections>
+                                    <action selector="addExercise:" destination="50g-cr-WrD" eventType="touchUpInside" id="dFa-LX-xkM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.6470588235294118" green="0.82352941176470584" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
@@ -255,12 +258,12 @@
                             <constraint firstItem="XSv-dC-9NQ" firstAttribute="centerX" secondItem="Wb0-oj-Z8m" secondAttribute="centerX" id="340-0F-OlO"/>
                             <constraint firstItem="SoG-xD-60F" firstAttribute="leading" secondItem="Wb0-oj-Z8m" secondAttribute="leading" constant="16" id="4kR-T4-793"/>
                             <constraint firstItem="lQH-9c-cGX" firstAttribute="leading" secondItem="Wb0-oj-Z8m" secondAttribute="leading" id="5AN-Ww-hca"/>
+                            <constraint firstItem="G6y-jG-kHV" firstAttribute="top" secondItem="XSv-dC-9NQ" secondAttribute="bottom" constant="5" id="Auf-zR-Zhp"/>
                             <constraint firstItem="2v1-cd-mOn" firstAttribute="leading" secondItem="Wb0-oj-Z8m" secondAttribute="leading" id="Ehq-b5-9UH"/>
                             <constraint firstItem="2v1-cd-mOn" firstAttribute="top" secondItem="Wb0-oj-Z8m" secondAttribute="top" constant="-80" id="J0p-hs-n4L"/>
                             <constraint firstItem="8Ac-Z0-iFl" firstAttribute="leading" secondItem="Wb0-oj-Z8m" secondAttribute="leadingMargin" constant="13" id="MhT-Yf-IXb"/>
                             <constraint firstAttribute="trailing" secondItem="45t-kj-QcO" secondAttribute="trailing" id="NUG-NA-ztn"/>
-                            <constraint firstItem="XSv-dC-9NQ" firstAttribute="top" secondItem="45t-kj-QcO" secondAttribute="bottom" id="TV3-gO-jWj"/>
-                            <constraint firstItem="G6y-jG-kHV" firstAttribute="top" secondItem="XSv-dC-9NQ" secondAttribute="bottom" id="bKH-oo-eUV"/>
+                            <constraint firstItem="XSv-dC-9NQ" firstAttribute="top" secondItem="45t-kj-QcO" secondAttribute="bottom" constant="5" id="NpF-a7-qNe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8Ac-Z0-iFl" secondAttribute="trailing" constant="13" id="i3O-uO-79t"/>
                             <constraint firstAttribute="trailing" secondItem="2v1-cd-mOn" secondAttribute="trailing" id="igl-If-mB6"/>
                             <constraint firstItem="8Ac-Z0-iFl" firstAttribute="top" secondItem="ufM-Vu-1nh" secondAttribute="bottom" constant="62" id="nPw-9K-tZH"/>

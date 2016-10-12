@@ -13,16 +13,23 @@ class WorkoutEditVC: UIViewController, UITableViewDelegate {
     var tableViewData = CurrentWorkoutTableViewDataSource()
     @IBOutlet weak var workoutName: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBAction func addExercise(_ sender: AnyObject) {
+        tableViewData.currentWorkout.appendExercise("New exercise", completionCondition: 10, isCardio: randBool())
+        let indexPath = [IndexPath(row: tableViewData.currentWorkout.exercises.count - 1 , section: 0)]
+        tableView.insertRows(at: indexPath, with: UITableViewRowAnimation.fade)
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // this one sets editing to be enabled. simple
         tableView.isEditing = true
         
+        
         //delegate and data source blah-blah
         tableView.dataSource = tableViewData
         tableView.delegate = self
+        
         workoutName.text = tableViewData.currentWorkout.name
         
         //callback function to be called from within the tableViewData object
@@ -39,8 +46,9 @@ class WorkoutEditVC: UIViewController, UITableViewDelegate {
     
     //these next two guys are part of the TableView delegate protocol. This one sets editing stile for a cell. Note that it actually returns the editing stile.
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
-      return UITableViewCellEditingStyle.none
+       return UITableViewCellEditingStyle.none
     }
+    
     // this one has to do with identation. Self explanatory. In my case it creates some layout conflicts.
     func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
         return false
@@ -74,6 +82,14 @@ class WorkoutEditVC: UIViewController, UITableViewDelegate {
         let contentInsets: UIEdgeInsets = UIEdgeInsets.zero
         tableView.contentInset = contentInsets
         tableView.scrollIndicatorInsets = contentInsets
+    }
+    func randBool () -> Bool {
+        let rand = Int(arc4random_uniform(2))
+        if rand == 0 {
+            return false
+        } else {
+            return true
+        }
     }
     /*
     // MARK: - Navigation

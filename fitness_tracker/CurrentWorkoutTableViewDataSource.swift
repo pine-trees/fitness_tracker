@@ -58,6 +58,7 @@ class CurrentWorkoutTableViewDataSource: NSObject, UITableViewDataSource, UIText
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return true
     }
+
     //this one enables to beatifully drag cells to rearrange. From the get go it enables rearrangng, but we need to update the data model itself as well. It's done here. It provides us with two IndexPaths so we can specify what we grab and where we put it. Callback in the end is to force the update. If not done, it loses gesture recognizer in the cell that has been dragged.
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let itemToMove = currentWorkout.exercises[sourceIndexPath.row]
@@ -65,6 +66,7 @@ class CurrentWorkoutTableViewDataSource: NSObject, UITableViewDataSource, UIText
         currentWorkout.exercises.insert(itemToMove, at: destinationIndexPath.row)
         callback?()
     }
+    
     //this guy here is called whenever gesture occurs. it then updates the data source adn force refreshes the tableView. Note how the tag can be aquired from the sender. Learned this one from keyboard management mumbo-jumbo. Callback for force uodate or else tableView ignores the changes until cell is dequed again.
     func imgTapped (sender: UITapGestureRecognizer) {
         let index = Int((sender.view?.tag)!)
