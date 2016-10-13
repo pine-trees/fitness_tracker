@@ -14,7 +14,8 @@ class WorkoutEditVC: UIViewController, UITableViewDelegate {
     @IBOutlet weak var workoutName: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBAction func addExercise(_ sender: AnyObject) {
-        tableViewData.currentWorkout.appendExercise("New exercise", completionCondition: 10, isCardio: randBool())
+        //creates new cell and updates data source
+        tableViewData.currentWorkout.appendRandExercise()
         let indexPath = [IndexPath(row: tableViewData.currentWorkout.exercises.count - 1 , section: 0)]
         tableView.insertRows(at: indexPath, with: UITableViewRowAnimation.fade)
         
@@ -35,6 +36,7 @@ class WorkoutEditVC: UIViewController, UITableViewDelegate {
         //callback function to be called from within the tableViewData object
         tableViewData.callback = self.forceUpdateTable
         
+        
         //activating the notification center function for keyboard events. This is needed to make sure kayboard never covers items being edited
         keyboardNotifications()
     }
@@ -45,9 +47,9 @@ class WorkoutEditVC: UIViewController, UITableViewDelegate {
     }
     
     //these next two guys are part of the TableView delegate protocol. This one sets editing stile for a cell. Note that it actually returns the editing stile.
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
-       return UITableViewCellEditingStyle.none
-    }
+//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+//       return UITableViewCellEditingStyle.none
+//    }
     
     // this one has to do with identation. Self explanatory. In my case it creates some layout conflicts.
     func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
@@ -83,14 +85,7 @@ class WorkoutEditVC: UIViewController, UITableViewDelegate {
         tableView.contentInset = contentInsets
         tableView.scrollIndicatorInsets = contentInsets
     }
-    func randBool () -> Bool {
-        let rand = Int(arc4random_uniform(2))
-        if rand == 0 {
-            return false
-        } else {
-            return true
-        }
-    }
+   
     /*
     // MARK: - Navigation
 

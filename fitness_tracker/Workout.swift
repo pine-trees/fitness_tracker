@@ -31,6 +31,22 @@ class Workout {
     func appendExercise (_ name: String, completionCondition: Int, isCardio: Bool) {
         self.exercises.append(Workout.Exercise(name: name, completionCondition: completionCondition, isCardio: isCardio, completionTime: nil, completionDate: nil))
     }
+    //apends random exercise
+    func appendRandExercise () {
+        let defaultNames = ["Squat", "Jumping Jack", "Run", "Pull-Up", "Push-Up", "Deadlift", "Sit-Up", "Burpee", "Lunge", "Overhead Press"]
+        let randName = Int(arc4random_uniform(10))
+        let condition = Int(arc4random_uniform(25))
+        
+        func ifCardio (rand: Int) -> Bool {
+            if randName == 1 || randName == 2 || randName == 7 {
+                return true
+            } else {
+                return false
+            }
+        }
+        
+        self.exercises.append(Workout.Exercise(name: defaultNames[randName], completionCondition: condition, isCardio: ifCardio(rand: randName), completionTime: nil, completionDate: nil))
+    }
     
     //initailizer. that appendExercise is used here to crate a default workout. The name has to be there though.
     init(name: String) {

@@ -67,6 +67,12 @@ class CurrentWorkoutTableViewDataSource: NSObject, UITableViewDataSource, UIText
         callback?()
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            currentWorkout.exercises.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
+        }
+    }
     //this guy here is called whenever gesture occurs. it then updates the data source adn force refreshes the tableView. Note how the tag can be aquired from the sender. Learned this one from keyboard management mumbo-jumbo. Callback for force uodate or else tableView ignores the changes until cell is dequed again.
     func imgTapped (sender: UITapGestureRecognizer) {
         let index = Int((sender.view?.tag)!)
