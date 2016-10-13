@@ -36,7 +36,7 @@ class CurrentWorkoutTableViewDataSource: NSObject, UITableViewDataSource, UIText
                 cell.icon.image = imgArray[0]
             }
             //cellconfig. takes whatever is in the data source at given index and puts it into the cell.
-            cell.cellConfig(excName: currentWorkout.exercises[row].name, cond: currentWorkout.exercises[row].completionCondition, discr: "reps")
+            cell.cellConfig(excName: currentWorkout.exercises[row].name, cond: currentWorkout.exercises[row].completionCondition, discr: currentWorkout.exercises[row].completionType)
             //crappy solution. I separate two textfields by assigning a seccond one the same tag as the row, but plus 100000 since no one can make hendred thousand exercises in one set. May lead to bugs though if someone does add 100000 exesices. Delegates are the same class.
             cell.condField.tag = row + 100000
             cell.condField.delegate = self
@@ -45,9 +45,15 @@ class CurrentWorkoutTableViewDataSource: NSObject, UITableViewDataSource, UIText
             //gesture recognizer for tap. It appears you need gesture recognizer in every view you want it to work in. So every cell gets its own gesture recognizer.
             //add it to the icon within the cell and set the tag to the current row.
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imgTapped))
+            
             cell.icon.addGestureRecognizer(tapGesture)
             cell.icon.isUserInteractionEnabled = true
             cell.icon.tag = row
+            
+            let condTapGesture = UITapGestureRecognizer(target: self, action: #selector(lblTapped))
+            cell.discrLbl.addGestureRecognizer(condTapGesture)
+            cell.discrLbl.isUserInteractionEnabled = true
+            cell.discrLbl.tag = row
             
             return cell
         } else {
@@ -77,6 +83,15 @@ class CurrentWorkoutTableViewDataSource: NSObject, UITableViewDataSource, UIText
     func imgTapped (sender: UITapGestureRecognizer) {
         let index = Int((sender.view?.tag)!)
         currentWorkout.exercises[index].isCardio = !currentWorkout.exercises[index].isCardio
+        callback?()
+    }
+    func lblTapped (sender: UITapGestureRecognizer) {
+        let index = Int((sender.view?.tag)!)
+        if currentWorkout.exercises[index].completionType == "reps" {
+            currentWorkout.exercises[index].completionType = "KM"
+        } else {
+            currentWorkout.exercises[index].completionType = "reps"
+        }
         callback?()
     }
     
