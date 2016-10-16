@@ -9,7 +9,7 @@
 import UIKit
 
 class WorkoutEditVC: UIViewController, UITableViewDelegate {
-
+    
     var tableViewData = CurrentWorkoutTableViewDataSource()
     @IBOutlet weak var workoutName: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -40,7 +40,7 @@ class WorkoutEditVC: UIViewController, UITableViewDelegate {
         //activating the notification center function for keyboard events. This is needed to make sure kayboard never covers items being edited
         keyboardNotifications()
     }
-    
+
     // Force updates the table view. Used as a callback
     func forceUpdateTable () {
         tableView.reloadData()
@@ -50,7 +50,7 @@ class WorkoutEditVC: UIViewController, UITableViewDelegate {
 //    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
 //       return UITableViewCellEditingStyle.none
 //    }
-    
+//    
     // this one has to do with identation. Self explanatory. In my case it creates some layout conflicts.
     func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
         return false

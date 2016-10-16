@@ -44,8 +44,6 @@ class TestViewController: UIViewController {
         firstNameField.text = testArray[0].firstName
         lastNameField.text = testArray[0].lastName
         ageField.text = "\(String(testArray[0].age))"
-        print(testArray.count)
-        print(testArray)
         
         // Do any additional setup after loading the view.
     }

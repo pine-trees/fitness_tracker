@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		443169701DB4124C00BDCF7F /* WorkoutListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4431696F1DB4124C00BDCF7F /* WorkoutListVC.swift */; };
 		443E10F21D95D91B00E7014A /* CurrentWorkoutTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443E10F11D95D91B00E7014A /* CurrentWorkoutTableViewDataSource.swift */; };
 		446683651DB3FBF2007BDEBC /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446683641DB3FBF2007BDEBC /* TestViewController.swift */; };
 		446683671DB3FC4D007BDEBC /* TestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446683661DB3FC4D007BDEBC /* TestClass.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4431696F1DB4124C00BDCF7F /* WorkoutListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutListVC.swift; sourceTree = "<group>"; };
 		443E10F11D95D91B00E7014A /* CurrentWorkoutTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWorkoutTableViewDataSource.swift; sourceTree = "<group>"; };
 		446683641DB3FBF2007BDEBC /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TestViewController.swift; path = ../TestViewController.swift; sourceTree = "<group>"; };
 		446683661DB3FC4D007BDEBC /* TestClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestClass.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				443E10F11D95D91B00E7014A /* CurrentWorkoutTableViewDataSource.swift */,
 				44E0ADE41D9993CD00235058 /* excCell.swift */,
 				4475A3591D820C7700964161 /* Main.storyboard */,
+				4431696F1DB4124C00BDCF7F /* WorkoutListVC.swift */,
 				44E0ADE21D9985E800235058 /* WorkoutEditVC.swift */,
 				446683641DB3FBF2007BDEBC /* TestViewController.swift */,
 				446683661DB3FC4D007BDEBC /* TestClass.swift */,
@@ -162,6 +165,7 @@
 				446683671DB3FC4D007BDEBC /* TestClass.swift in Sources */,
 				44E0ADE31D9985E800235058 /* WorkoutEditVC.swift in Sources */,
 				446683651DB3FBF2007BDEBC /* TestViewController.swift in Sources */,
+				443169701DB4124C00BDCF7F /* WorkoutListVC.swift in Sources */,
 				4475A3581D820C7700964161 /* ViewController.swift in Sources */,
 				443E10F21D95D91B00E7014A /* CurrentWorkoutTableViewDataSource.swift in Sources */,
 				4475A3561D820C7700964161 /* AppDelegate.swift in Sources */,
