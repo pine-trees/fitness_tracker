@@ -35,7 +35,7 @@ class WorkoutEditVC: UIViewController, UITableViewDelegate {
         tableView.dataSource = tableViewData
         tableView.delegate = self
         
-        workoutName.text = tableViewData.currentWorkout.name
+        
         
         //callback function to be called from within the tableViewData object
         tableViewData.callback = self.forceUpdateTable
@@ -46,6 +46,7 @@ class WorkoutEditVC: UIViewController, UITableViewDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         tableViewData.currentWorkout = workouts[lastEditedIndex]
+        workoutName.text = tableViewData.currentWorkout.name
     }
     // Force updates the table view. Used as a callback
     func forceUpdateTable () {

@@ -307,8 +307,11 @@
                                     <action selector="addExercise:" destination="50g-cr-WrD" eventType="touchUpInside" id="dFa-LX-xkM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdm-kS-8G8">
-                                <frame key="frameInset" minX="16" minY="632" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdm-kS-8G8">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Ci0-VI-Lmi"/>
+                                    <constraint firstAttribute="height" constant="30" id="R4u-qy-ZuX"/>
+                                </constraints>
                                 <state key="normal" title="Button" image="checkmark_icon"/>
                                 <connections>
                                     <action selector="goBack:" destination="50g-cr-WrD" eventType="touchUpInside" id="FYq-6h-dto"/>
