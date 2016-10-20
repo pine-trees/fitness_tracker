@@ -52,7 +52,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="5" contentMode="center" tableViewCell="8pX-IP-JrY" id="tQi-PF-1dh">
-                                                    <frame key="frameInset" width="343" height="44"/>
+                                                    <frame key="frameInset" width="1000" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dumbbell_Icon" translatesAutoresizingMaskIntoConstraints="NO" id="ZTr-y1-2cr">
@@ -307,9 +307,17 @@
                                     <action selector="addExercise:" destination="50g-cr-WrD" eventType="touchUpInside" id="dFa-LX-xkM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdm-kS-8G8">
+                                <frame key="frameInset" minX="16" minY="632" width="30" height="30"/>
+                                <state key="normal" title="Button" image="checkmark_icon"/>
+                                <connections>
+                                    <action selector="goBack:" destination="50g-cr-WrD" eventType="touchUpInside" id="FYq-6h-dto"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.6470588235294118" green="0.82352941176470584" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="Pdm-kS-8G8" firstAttribute="top" secondItem="45t-kj-QcO" secondAttribute="bottom" constant="5" id="1ge-e8-D5n"/>
                             <constraint firstItem="XSv-dC-9NQ" firstAttribute="centerX" secondItem="Wb0-oj-Z8m" secondAttribute="centerX" id="340-0F-OlO"/>
                             <constraint firstItem="SoG-xD-60F" firstAttribute="leading" secondItem="Wb0-oj-Z8m" secondAttribute="leading" constant="16" id="4kR-T4-793"/>
                             <constraint firstItem="lQH-9c-cGX" firstAttribute="leading" secondItem="Wb0-oj-Z8m" secondAttribute="leading" id="5AN-Ww-hca"/>
@@ -325,7 +333,9 @@
                             <constraint firstItem="45t-kj-QcO" firstAttribute="top" secondItem="SoG-xD-60F" secondAttribute="bottom" constant="8" id="sed-S1-OeR"/>
                             <constraint firstItem="SoG-xD-60F" firstAttribute="top" secondItem="lQH-9c-cGX" secondAttribute="bottom" constant="8" id="tyv-PF-rVY"/>
                             <constraint firstItem="lQH-9c-cGX" firstAttribute="top" secondItem="Wb0-oj-Z8m" secondAttribute="top" id="ujL-z9-Z8v"/>
+                            <constraint firstItem="Pdm-kS-8G8" firstAttribute="leading" secondItem="Wb0-oj-Z8m" secondAttribute="leadingMargin" id="unO-Xr-INb"/>
                             <constraint firstAttribute="trailing" secondItem="lQH-9c-cGX" secondAttribute="trailing" id="vLU-Rr-Cgy"/>
+                            <constraint firstItem="G6y-jG-kHV" firstAttribute="top" secondItem="Pdm-kS-8G8" secondAttribute="bottom" constant="5" id="vbB-8Z-kYw"/>
                             <constraint firstAttribute="trailing" secondItem="SoG-xD-60F" secondAttribute="trailing" constant="16" id="wvY-ZO-yvQ"/>
                             <constraint firstItem="45t-kj-QcO" firstAttribute="leading" secondItem="Wb0-oj-Z8m" secondAttribute="leading" id="zKo-zR-x8p"/>
                         </constraints>
@@ -333,11 +343,12 @@
                     <connections>
                         <outlet property="tableView" destination="45t-kj-QcO" id="fIr-bp-qgj"/>
                         <outlet property="workoutName" destination="SoG-xD-60F" id="rUS-Ld-IFR"/>
+                        <segue destination="Xyv-Mc-N05" kind="show" identifier="toWorkoutList" id="Vkt-4h-CpM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gU4-Ii-HAg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-364" y="609.44527736131943"/>
+            <point key="canvasLocation" x="-404" y="669"/>
         </scene>
         <!--Workout List-->
         <scene sceneID="yPW-o2-hqF">
@@ -431,13 +442,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4jL-gA-iJG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1234.4000000000001" y="608.54572713643188"/>
+            <point key="canvasLocation" x="-1327" y="669"/>
         </scene>
     </scenes>
     <resources>
         <image name="Dumbbell_Icon" width="500" height="500"/>
         <image name="Top_tint1" width="1080" height="162"/>
         <image name="Top_tint2" width="1080" height="162"/>
+        <image name="checkmark_icon" width="600" height="600"/>
         <image name="plus_sign" width="500" height="500"/>
     </resources>
 </document>

@@ -9,7 +9,8 @@
 import UIKit
 
 class WorkoutEditVC: UIViewController, UITableViewDelegate {
-    
+    var workouts = [Workout]()
+    var lastEditedIndex: Int!
     var tableViewData = CurrentWorkoutTableViewDataSource()
     @IBOutlet weak var workoutName: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -19,6 +20,9 @@ class WorkoutEditVC: UIViewController, UITableViewDelegate {
         let indexPath = [IndexPath(row: tableViewData.currentWorkout.exercises.count - 1 , section: 0)]
         tableView.insertRows(at: indexPath, with: UITableViewRowAnimation.fade)
         
+    }
+    @IBAction func goBack (_ sender: AnyObject) {
+        performSegue(withIdentifier: "toWorkoutList", sender: workouts)
     }
     
     override func viewDidLoad() {
@@ -40,7 +44,9 @@ class WorkoutEditVC: UIViewController, UITableViewDelegate {
         //activating the notification center function for keyboard events. This is needed to make sure kayboard never covers items being edited
         keyboardNotifications()
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        tableViewData.currentWorkout = workouts[lastEditedIndex]
+    }
     // Force updates the table view. Used as a callback
     func forceUpdateTable () {
         tableView.reloadData()
@@ -95,5 +101,13 @@ class WorkoutEditVC: UIViewController, UITableViewDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toWorkoutList" {
+            if let workoutListVC = segue.destination as? WorkoutListVC {
+                if let dataToTransfer = sender as? [Workout] {
+                    workoutListVC.workouts = dataToTransfer
+                }
+            }
+        }
+    }
 }

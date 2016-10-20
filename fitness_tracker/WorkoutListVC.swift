@@ -11,6 +11,7 @@ import UIKit
 class WorkoutListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var workouts = [Workout(name: "Energized morning"), Workout(name: "Tender evening"), Workout(name: "Good afternoon")]
+    var lastEditedIndex: Int!
     
     @IBOutlet weak var tableView: UITableView!
 
@@ -59,9 +60,9 @@ class WorkoutListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("selected \(workouts[indexPath.row].name)")
-        let workoutToBeEdited = workouts[indexPath.row]
-//        let workoutToBeEditedName = workouts[indexPath.row].name
-        performSegue(withIdentifier: "toWorkoutEdit", sender: workoutToBeEdited)
+        
+        lastEditedIndex = indexPath.row
+        performSegue(withIdentifier: "toWorkoutEdit", sender: workouts)
     }
     
     /*
@@ -76,8 +77,9 @@ class WorkoutListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toWorkoutEdit" {
             if let workoutEditVC = segue.destination as? WorkoutEditVC {
-                if let dataToTransfer = sender as? Workout {
-                    workoutEditVC.tableViewData.currentWorkout = dataToTransfer
+                if let dataToTransfer = sender as? [Workout] {
+                    workoutEditVC.workouts = dataToTransfer
+                    workoutEditVC.lastEditedIndex = self.lastEditedIndex
                 }
             }
         }
